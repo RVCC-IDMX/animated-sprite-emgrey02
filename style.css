@@ -39,11 +39,11 @@ body {
 }
 
 @keyframes travel {
-    50% {
+    40% {
         opacity: 100;
     }
 
-    90% {
+    50% {
         opacity: 0;
     }
 
