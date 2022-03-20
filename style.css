@@ -1,0 +1,92 @@
+body {
+    background-color: #58595b;
+}
+
+.monster {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    background: transparent url('monster.png') 0 0 no-repeat;
+    width: 453px;
+    height: 510px;
+    transform: translate(-50%, -50%) scale(0.3);
+    animation: move 1s steps(26) infinite;
+}
+
+@keyframes move {
+    100% {
+        background-position: -11778px, 0;
+    }
+}
+
+.food-container {
+    display: block;
+    margin-inline: auto;
+    transform: translateX(-70px) translateY(40vh);
+    height: 20px;
+    width: 100px;
+    overflow: hidden;
+}
+
+.food {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgb(219, 230, 230);
+    box-shadow: inset 1px -1px 1px rgba(0, 0, 0, 0.5);
+    animation: travel 1s ease-in infinite;
+}
+
+@keyframes travel {
+    50% {
+        opacity: 100;
+    }
+
+    90% {
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(300px);
+    }
+}
+
+.loading {
+    display: block;
+    margin-inline: auto;
+    width: fit-content;
+    transform: translateY(50vh);
+    color: rgb(219, 230, 230);
+    letter-spacing: .3ch;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    animation: inout 1s ease infinite;
+}
+
+@keyframes inout {
+    50% {
+        opacity: .7;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@media (prefers-reduced-motion) {
+    .food, .monster {
+        animation: no-repeat;
+    }
+
+    @keyframes inout {
+        50% {
+            opacity: .9;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+}
